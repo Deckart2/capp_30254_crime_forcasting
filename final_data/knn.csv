@@ -1,0 +1,13 @@
+,parameters_2019,precision_2019,parameters_2018,precision_2018,parameters_2017,precision_2017,mean
+0,"{'weights': 'uniform', 'n_neighbors': 10}",0.793124246079614,"{'weights': 'uniform', 'n_neighbors': 10}",0.7791188895594447,"{'weights': 'uniform', 'n_neighbors': 10}",0.7952380952380952,0.7891604102923847
+0,"{'weights': 'distance', 'n_neighbors': 10}",0.7591353576942872,"{'weights': 'distance', 'n_neighbors': 10}",0.752434648898001,"{'weights': 'distance', 'n_neighbors': 10}",0.7565524193548387,0.7560408086490424
+0,"{'weights': 'distance', 'n_neighbors': 15}",0.7446120689655172,"{'weights': 'distance', 'n_neighbors': 15}",0.7453142227122381,"{'weights': 'distance', 'n_neighbors': 15}",0.7494600431965442,0.7464621116247665
+0,"{'weights': 'distance', 'n_neighbors': 7}",0.7470737913486005,"{'weights': 'distance', 'n_neighbors': 7}",0.748753738783649,"{'weights': 'distance', 'n_neighbors': 7}",0.7377049180327869,0.7445108160550121
+0,"{'weights': 'uniform', 'n_neighbors': 7}",0.7479591836734694,"{'weights': 'uniform', 'n_neighbors': 7}",0.7466401194624191,"{'weights': 'uniform', 'n_neighbors': 7}",0.7385685884691849,0.7443892972016911
+0,"{'weights': 'uniform', 'n_neighbors': 20}",0.7450390859891762,"{'weights': 'uniform', 'n_neighbors': 20}",0.7448979591836735,"{'weights': 'uniform', 'n_neighbors': 20}",0.7350427350427351,0.7416599267385283
+0,"{'weights': 'distance', 'n_neighbors': 20}",0.7336628226249313,"{'weights': 'distance', 'n_neighbors': 20}",0.7382319173363949,"{'weights': 'distance', 'n_neighbors': 20}",0.7248062015503876,0.7322336471705713
+0,"{'weights': 'uniform', 'n_neighbors': 5}",0.7350557244174265,"{'weights': 'uniform', 'n_neighbors': 5}",0.7204249154997586,"{'weights': 'uniform', 'n_neighbors': 5}",0.7206946454413893,0.7253917617861915
+0,"{'weights': 'distance', 'n_neighbors': 5}",0.7346835443037975,"{'weights': 'distance', 'n_neighbors': 5}",0.7205598455598455,"{'weights': 'distance', 'n_neighbors': 5}",0.7205598455598455,0.7252677451411628
+0,"{'weights': 'uniform', 'n_neighbors': 15}",0.7131537242472267,"{'weights': 'uniform', 'n_neighbors': 15}",0.7140504939626784,"{'weights': 'uniform', 'n_neighbors': 15}",0.7180993059263214,0.7151011747120753
+0,"{'weights': 'uniform', 'n_neighbors': 3}",0.6668219944082013,"{'weights': 'uniform', 'n_neighbors': 3}",0.6573275862068966,"{'weights': 'uniform', 'n_neighbors': 3}",0.6398450946643718,0.6546648917598232
+0,"{'weights': 'distance', 'n_neighbors': 3}",0.6668219944082013,"{'weights': 'distance', 'n_neighbors': 3}",0.6573275862068966,"{'weights': 'distance', 'n_neighbors': 3}",0.6398450946643718,0.6546648917598232
