@@ -57,7 +57,7 @@ ggplot(data=precision, aes(x=year, y = precision, fill=model_type)) +
 
 ggplot(data=recall, aes(x=year, y = recall, fill=model_type)) + 
   geom_bar(position = "dodge", stat = "identity") +
-  theme_bw() + labs(x="Year", y="Precision", fill="Model Type") +
+  theme_bw() + labs(x="Year", y="Recall", fill="Model Type") +
   theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + 
   geom_text(aes(label=recall), position=position_dodge(.9), vjust=1.5) + ylim(0, 1)
