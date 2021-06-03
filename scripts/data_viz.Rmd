@@ -15,8 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 fd <- read.csv("../final_data/combined_2020_results.csv")
 fd <- fd %>%
-  select(-X)
-fd
+  select(-c(X, params))
 
 precision <- fd %>%
   select(contains("precision")|"model_type") %>%
@@ -33,6 +32,11 @@ recall <- fd %>%
   mutate(year = str_sub(year, 8, 12)) %>%
   mutate(year = as.numeric(year)) %>%
   mutate(recall = round(recall, 2))
+
+fd <- fd %>%
+  pivot_longer(!model_type, names_to="year", values_to="values") %>%
+  mutate(year = str_sub(year, start = -4)) 
+fd
 ```
 
 
