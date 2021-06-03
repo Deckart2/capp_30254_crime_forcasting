@@ -1,0 +1,64 @@
+---
+title: "data_viz_30254"
+author: "Gabe Morrison"
+date: "6/2/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Used Contains syntax from here: https://stackoverflow.com/questions/25923392/select-columns-based-on-string-match-dplyrselect
+
+library(tidyverse)
+fd <- read.csv("../final_data/combined_2020_results.csv")
+fd <- fd %>%
+  select(-X)
+fd
+
+precision <- fd %>%
+  select(contains("precision")|"model_type") %>%
+  pivot_longer(!model_type, names_to="year", values_to="precision") %>%
+  #pivot_wider(names_from="model_type", values_from = "precision") %>%
+  mutate(year = str_sub(year, 11, 15)) %>%
+  mutate(year = as.numeric(year)) %>%
+  mutate(precision = round(precision, 2))
+
+recall <- fd %>%
+  select(contains("recall")|"model_type") %>%
+  pivot_longer(!model_type, names_to="year", values_to="recall") %>%
+  #pivot_wider(names_from="model_type", values_from = "precision") %>%
+  mutate(year = str_sub(year, 8, 12)) %>%
+  mutate(year = as.numeric(year)) %>%
+  mutate(recall = round(recall, 2))
+
+recall
+```
+
+
+
+```{r}
+#Help getting aes order and color from: https://www.biostars.org/p/362024/
+#Help With titles:https://www.r-graph-gallery.com/239-custom-layout-legend-ggplot2.html and https://www.datanovia.com/en/blog/ggplot-legend-title-position-and-labels/
+# Removing background: https://felixfan.github.io/ggplot2-remove-grid-background-margin/
+#labelling bars: https://r-graphics.org/recipe-bar-graph-labels
+
+ggplot(data=precision, aes(x=year, y = precision, fill=model_type)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  theme_bw() + labs(x="Year", y="Precision", fill="Model Type") +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + 
+  geom_text(aes(label=precision), position=position_dodge(.9), vjust=1.5) + ylim(0, 1)
+```
+
+```{r}
+
+ggplot(data=recall, aes(x=year, y = recall, fill=model_type)) + 
+  geom_bar(position = "dodge", stat = "identity") +
+  theme_bw() + labs(x="Year", y="Precision", fill="Model Type") +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + 
+  geom_text(aes(label=recall), position=position_dodge(.9), vjust=1.5) + ylim(0, 1)
+```
