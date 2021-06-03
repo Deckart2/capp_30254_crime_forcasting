@@ -33,10 +33,6 @@ recall <- fd %>%
   mutate(year = as.numeric(year)) %>%
   mutate(recall = round(recall, 2))
 
-fd <- fd %>%
-  pivot_longer(!model_type, names_to="year", values_to="values") %>%
-  mutate(year = str_sub(year, start = -4)) 
-fd
 ```
 
 
@@ -64,5 +60,6 @@ ggplot(data=recall, aes(x=year, y = recall, fill=model_type)) +
   theme_bw() + labs(x="Year", y="Recall", fill="Model Type", title = "Model Drift: Change in Recall Over Time") +
   theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + 
-  geom_text(aes(label=recall), position=position_dodge(.9), vjust=1.5) + ylim(0, 1)
+  #geom_text(aes(label=recall), position=position_dodge(.9), vjust=1.5) +
+  ylim(0, 1)
 ```
